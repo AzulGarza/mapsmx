@@ -1,5 +1,4 @@
 import geopandas as gpd
-import pkgutil
 from mapsmx.utils import get_file_name
 
 class MapsMX:
@@ -28,8 +27,6 @@ class MapsMX:
 
     def read_data(self, kind, add_centroids):
 
-        #data = pkgutil.get_data(__name__, "geo/{}.zip".format(kind))
-        #print("data:", repr(data))
         read_file = get_file_name(__name__,  "geo/{}.zip".format(kind))
         read_file = 'zip://{}'.format(read_file)
 
