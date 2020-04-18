@@ -1,5 +1,5 @@
 import geopandas as gpd
-
+import os
 
 class MapsMX:
     """
@@ -27,7 +27,7 @@ class MapsMX:
 
     def read_data(self, kind, add_centroids):
 
-        read_file = 'zip://mapsmx/geo/{}.zip'.format(kind)
+        read_file = 'zip://{}/mapsmx/geo/{}.zip'.format(os.getcwd(), kind)
         data = gpd.read_file(read_file)
         data = self.clean_cols(data, kind)
         data = data.set_geometry('geometry_{}'.format(kind))
