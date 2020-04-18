@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mapsmx",
-    version="0.0.1",
+    version="0.0.2",
     author="Federico Garza",
     author_email="fede.garza.ramirez@gmail.com",
     description="Create maps of México easily with python.",
