@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     package_data={
         "mapsmx": ["geo/*.zip"]
-    }
+    },
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
