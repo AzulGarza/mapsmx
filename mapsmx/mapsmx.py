@@ -1,7 +1,6 @@
 import geopandas as gpd
 import pkgutil
-import os
-import sys
+from mapsmx.utils import get_file_name
 
 class MapsMX:
     """
@@ -31,8 +30,8 @@ class MapsMX:
 
         #data = pkgutil.get_data(__name__, "geo/{}.zip".format(kind))
         #print("data:", repr(data))
-        d = os.path.dirname(sys.modules[__name__].__file__)
-        read_file = 'zip:/{}/geo/{}.zip'.format(d, kind)
+        read_file = get_file_name(__name__,  "geo/{}.zip".format(kind))
+        read_file = 'zip://{}'.format(read_file)
 
         data = gpd.read_file(read_file)
         data = self.clean_cols(data, kind)
