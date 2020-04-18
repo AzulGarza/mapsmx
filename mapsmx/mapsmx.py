@@ -34,7 +34,7 @@ class MapsMX:
         data = self.clean_cols(data, kind)
 
         geometry_col = 'geometry_{}'.format(kind)
-        data = data.set_geometry()
+        data = data.set_geometry(geometry_col)
 
         if add_centroids:
             centroid_col = 'centroid_{}'.format(kind)
