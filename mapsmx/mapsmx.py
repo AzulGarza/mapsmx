@@ -32,10 +32,13 @@ class MapsMX:
 
         data = gpd.read_file(read_file)
         data = self.clean_cols(data, kind)
-        data = data.set_geometry('geometry_{}'.format(kind))
+
+        geometry_col = 'geometry_{}'.format(kind)
+        data = data.set_geometry()
 
         if add_centroids:
-            data['centroid'] = data['geometry_{}'.format(kind)].centroid
+            centroid_col = 'centroid_{}'.format(kind)
+            data[centroid_col] = data[geometry_col].centroid
 
         return data
 
