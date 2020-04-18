@@ -13,6 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/FedericoGarza/mapsmx",
     packages=setuptools.find_packages(),
+    package_data={
+        "mapsmx": ["geo/*.zip"]
+    }
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
