@@ -28,8 +28,12 @@ class MapsMX:
         return data
 
     def read_data(self, kind, add_centroids):
+
+        #data = pkgutil.get_data(__name__, "geo/{}.zip".format(kind))
+        #print("data:", repr(data))
         d = os.path.dirname(sys.modules[__name__].__file__)
-        read_file = 'zip://{}/geo/{}.zip'.format(d, kind)
+        read_file = 'zip:/{}/geo/{}.zip'.format(d, kind)
+
         data = gpd.read_file(read_file)
         data = self.clean_cols(data, kind)
         data = data.set_geometry('geometry_{}'.format(kind))
